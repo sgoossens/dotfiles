@@ -3,6 +3,7 @@
   templatedir = ~/.git_template
 [push]
   default = current
+  autoSetupRemote = true
 [color]
   ui = auto
 [alias]
@@ -28,3 +29,8 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[user]
+  name = Spencer Goossens
+  email = spencer@blw.ai
+[core]
+  editor = vim

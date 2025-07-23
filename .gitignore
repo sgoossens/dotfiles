@@ -1,2 +1,5 @@
 !bin
+aws/cli
+aws/sso
+docker/buildx
 vim/bundle/
