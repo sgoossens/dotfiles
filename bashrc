@@ -109,3 +109,6 @@ if ! shopt -oq posix; then
 fi
 
 export AWS_PROFILE=ECR-Full-Access-767828768904
+
+# Source aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
