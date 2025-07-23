@@ -61,6 +61,8 @@ alias gcn='git commit --verbose --no-edit'
 alias gcn!='git commit --verbose --no-edit --amend'
 alias gcf='git config --list'
 alias gcfu='git commit --fixup'
+alias gs='git status'
+alias gss='git status --short --branch'
 
 
 # Include custom aliases
