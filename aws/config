@@ -1,9 +1,0 @@
-[profile ECR-Full-Access-767828768904]
-sso_session = bwasso
-sso_account_id = 767828768904
-sso_role_name = developer-access
-region = us-east-2
-[sso-session bwasso]
-sso_start_url = https://d-9067c20008.awsapps.com/start
-sso_region = us-east-1
-sso_registration_scopes = sso:account:access

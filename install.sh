@@ -42,15 +42,7 @@ install_dotfile "./gitignore" ~/.gitignore
 install_dotfile "./gitmessage" ~/.gitmessage
 install_dotfile "./vimrc" ~/.vimrc
 install_dotfile "./vimrc.bundles" ~/.vimrc.bundles
-install_dotfile "./tmux.conf" ~/.tmux.conf
-install_dotfile "./ctags" ~/.ctags
-install_dotfile "./agignore" ~/.agignore
-install_dotfile "./gemrc" ~/.gemrc
-install_dotfile "./railsrc" ~/.railsrc
 install_dotfile "./psqlrc" ~/.psqlrc
-install_dotfile "./asdfrc" ~/.asdfrc
-install_dotfile "./rspec" ~/.rspec
-install_dotfile "./hushlogin" ~/.hushlogin
 
 # Install vim directory if it exists
 if [[ -d "./vim" ]]; then
