@@ -40,53 +40,8 @@ echo "Installing common dotfiles..."
 install_dotfile "./aliases" ~/.aliases
 install_dotfile "./gitignore" ~/.gitignore
 install_dotfile "./gitmessage" ~/.gitmessage
-install_dotfile "./vimrc" ~/.vimrc
-install_dotfile "./vimrc.bundles" ~/.vimrc.bundles
 install_dotfile "./psqlrc" ~/.psqlrc
 
-# Install vim directory if it exists
-if [[ -d "./vim" ]]; then
-    echo "Installing vim configuration directory..."
-    if [[ -d ~/.vim ]]; then
-        echo "Backing up existing ~/.vim to ~/.vim.backup"
-        mv ~/.vim ~/.vim.backup
-    fi
-    cp -r ./vim ~/.vim
-    echo "Installed ~/.vim directory"
-fi
-
-# Install vim-plug if vimrc.bundles exists
-if [[ -f "./vimrc.bundles" ]]; then
-    echo "Installing vim-plug plugin manager..."
-    
-    # Create autoload directory if it doesn't exist
-    mkdir -p ~/.vim/autoload
-    
-    # Download vim-plug
-    if command -v curl >/dev/null 2>&1; then
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        echo "vim-plug installed successfully"
-        
-        # Install vim plugins
-        echo "Installing vim plugins..."
-        vim +PlugInstall +qall
-        echo "Vim plugins installed"
-    elif command -v wget >/dev/null 2>&1; then
-        wget -O ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        echo "vim-plug installed successfully"
-        
-        # Install vim plugins
-        echo "Installing vim plugins..."
-        vim +PlugInstall +qall
-        echo "Vim plugins installed"
-    else
-        echo "Warning: Neither curl nor wget found. Please install vim-plug manually:"
-        echo "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-        echo "Then run: vim +PlugInstall +qall"
-    fi
-fi
 
 # Detect shell and install appropriate configuration files
 case "$CURRENT_SHELL" in
