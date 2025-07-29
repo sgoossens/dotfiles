@@ -50,6 +50,17 @@ case "$CURRENT_SHELL" in
         install_dotfile "./zshenv" ~/.zshenv
         install_dotfile "./zprofile" ~/.zprofile
         install_dotfile "./zshrc" ~/.zshrc
+        
+        # Install zsh directory structure if it exists
+        if [[ -d "./zsh" ]]; then
+            echo "Installing zsh configuration directory..."
+            if [[ -d ~/.zsh ]]; then
+                echo "Backing up existing ~/.zsh to ~/.zsh.backup"
+                mv ~/.zsh ~/.zsh.backup
+            fi
+            cp -r ./zsh ~/.zsh
+            echo "Installed ~/.zsh directory"
+        fi
         ;;
     "bash")
         echo "Detected bash shell - installing bash configurations"
